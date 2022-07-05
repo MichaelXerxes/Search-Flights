@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { FlightService } from './../api/services/flight.service';
-import { Book, FlightRm } from '../api/models';
+import { BookDto, FlightRm } from '../api/models';
 import { AuthserviceService } from '../authservice/authservice.service';
 import { FormBuilder, Validators } from '@angular/forms';
 //import { parse } from 'path';
@@ -56,7 +56,7 @@ export class BookFlightsComponent implements OnInit {
     if (this.form.invalid)
       return;
 
-    const booking: Book = {
+    const booking: BookDto = {
       flightId: this.flight.id,
       passengerEmail: this.authService.currentUser?.email,
       numberOfSeats: this.form.get('number')?.value

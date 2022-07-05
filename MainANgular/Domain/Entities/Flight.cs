@@ -2,17 +2,38 @@
 
 namespace MainANgular.Domain.Entities;
 
-public record Flight(
-    Guid Id,
-    string airline,
-    string Price,
-    TimePlace Deprature,
-    TimePlace Arrival,
-    int RemainingNumberOfSetas
-    )
+public class Flight
 {
+    public Guid Id { get; set; }
+    public string Airline { get; set; }
+    public string Price { get; set; }
+    public TimePlace Deprature { get; set; }
+    public TimePlace Arrival { get; set; }
+    public int RemainingNumberOfSetas { get; set; }
     public IList<Booking> Bookings = new List<Booking>();
-    public int RemainingNumberOfSetas { get; set; } = RemainingNumberOfSetas;
+    public Flight(Guid id,
+            string airline,
+            string price,
+            TimePlace deprature,
+            TimePlace arrival,
+            int remainingNumberOfSetas)
+    {
+        Id = id;
+        Airline = airline;
+        Price = price;
+        Deprature = deprature;
+        Arrival = arrival;
+        RemainingNumberOfSetas = remainingNumberOfSetas;
+
+
+
+    }
+    public Flight()
+    {
+
+    }
+   
+    
 
     public object? MakeBooking(string passengerEmail,byte numberOfSeats)
     {
@@ -29,6 +50,10 @@ public record Flight(
 
         flight.RemainingNumberOfSetas -= numberOfSeats;
 
+        return null;
+    }
+    public object? CancelBooking(string passengerEmail, byte numberOfSeats)
+    {
         return null;
     }
 }

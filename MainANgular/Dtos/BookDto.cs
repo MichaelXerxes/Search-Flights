@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace MainANgular.Dtos
 {
-    public record Book
+    public record BookDto
     (
 
         [Required]Guid FlightId,

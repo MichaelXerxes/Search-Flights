@@ -9,7 +9,7 @@ import { RequestBuilder } from '../request-builder';
 import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 
-import { Book } from '../models/book';
+import { BookDto } from '../models/book-dto';
 import { FlightRm } from '../models/flight-rm';
 
 @Injectable({
@@ -116,7 +116,7 @@ export class FlightService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   bookFlight$Response(params?: {
-    body?: Book
+    body?: BookDto
   }): Observable<StrictHttpResponse<void>> {
 
     const rb = new RequestBuilder(this.rootUrl, FlightService.BookFlightPath, 'post');
@@ -142,7 +142,7 @@ export class FlightService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   bookFlight(params?: {
-    body?: Book
+    body?: BookDto
   }): Observable<void> {
 
     return this.bookFlight$Response(params).pipe(
