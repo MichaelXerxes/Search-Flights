@@ -25,8 +25,7 @@ export class BookFlightsComponent implements OnInit {
     number: [1, Validators.compose([Validators.required, Validators.min(1), Validators.max(254)])]
   })
   ngOnInit(): void {
-    if (!this.authService.currentUser)
-      this.router.navigate(['/register-passenger'])
+    
 
     this.route.paramMap.subscribe(p => this.findFlight(p.get("flightId")))
   }

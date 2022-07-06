@@ -9,28 +9,7 @@ import { FlightRm } from '../api/models';
 })
 export class SearchFlightsComponent implements OnInit {
 
- /* searchResult: FlightRa[] = [{
-    airline: "Amercian Airlines",
-    remaningNumberOfSets: 500,
-    departure: { time: Date.now().toString(), place: "Los Nageles" },
-    arrival: { time: Date.now().toString(), place: "Istambul" },
-    price:"350"
-  },
-  {
-    airline: "British Airlines",
-    remaningNumberOfSets: 300,
-    departure: { time: Date.now().toString(), place: "Berlin" },
-    arrival: { time: Date.now().toString(), place: "Moscov" },
-    price: "150"
-    }
-    ,
-    {
-      airline: "Air Lingus",
-      remaningNumberOfSets: 400,
-      departure: { time: Date.now().toString(), place: "Dublin" },
-      arrival: { time: Date.now().toString(), place: "London" },
-      price: "350"
-    }]*/
+
   searchResult: FlightRm[] = []
   constructor(private flightService: FlightService) { }
 
